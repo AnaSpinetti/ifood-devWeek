@@ -1,4 +1,4 @@
-package me.dio.carrinho.services;
+package me.dio.carrinho.repository.services;
 
 import me.dio.carrinho.model.Carrinho;
 import me.dio.carrinho.model.Item;

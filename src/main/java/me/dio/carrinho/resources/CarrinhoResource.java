@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import me.dio.carrinho.model.Carrinho;
 import me.dio.carrinho.model.Item;
 import me.dio.carrinho.resources.dto.ItemDto;
-import me.dio.carrinho.services.CarrinhoService;
+import me.dio.carrinho.repository.services.CarrinhoService;
 import org.springframework.web.bind.annotation.*;
 
 //Para indicar que é uma classe onde terá nossos endpoints

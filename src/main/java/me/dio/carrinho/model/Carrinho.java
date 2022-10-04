@@ -42,7 +42,7 @@ public class Carrinho {
 
     @Enumerated
     private FormaPagamento FormaPagamento;
-    private Boolean fechada;
+    private Boolean fechado;
 
     /*
     // Por estarmos trabalhando com o hibernate, ele solicita também um construtor vazio
