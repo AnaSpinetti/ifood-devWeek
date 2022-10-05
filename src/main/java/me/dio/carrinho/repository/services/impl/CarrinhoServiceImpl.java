@@ -12,6 +12,7 @@ import me.dio.carrinho.repository.services.CarrinhoService;
 import me.dio.carrinho.resources.dto.ItemDto;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -54,8 +55,19 @@ public class CarrinhoServiceImpl implements CarrinhoService {
             }
         }
 
-        List<Double>     
+        List<Double> valorDosItens = new ArrayList<>();
 
+        for(Item itemDoCarrinho: itensDoCarrinho){
+            double valorTotalItem = itemDoCarrinho.getProduto().getValorUnitario() * itemDoCarrinho.getQuantidade();
+
+            valorDosItens.add(valorTotalItem);
+        }
+
+        Double valorTotalCarrinho = valorDosItens.stream()
+                        .mapToDouble(valorTotalDeCadaItem -> valorTotalDeCadaItem)
+                        .sum();
+
+        carrinho.setValorTotal(valorTotalCarrinho);
         carrinhoRepository.save(carrinho);
 
         return itemParaSerInserido;
